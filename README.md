@@ -1,42 +1,21 @@
-# Nuxt 3 Minimal Starter
+# Mini Trello Board
+This is a mini Trello board application created using Nuxt, TypeScript, Vue Draggable, and Tailwind. The goal of this project was to improve my Vue skills and frontend development abilities.
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Features
+The mini Trello board includes the following features:
 
-## Setup
+- Create, edit and delete columns
+- Create, edit and delete tasks
+- Drag columns
+- Drag tasks between columns
 
-Make sure to install the dependencies:
 
-```bash
-# yarn
-yarn install
+## Technologies Used
+- The mini Trello board was built using the following technologies:
+- Nuxt.js: a framework for building Vue.js applications
+- TypeScript: a statically-typed superset of JavaScript
+- Vue Draggable: a Vue.js plugin for drag-and-drop interaction
+- Tailwind CSS: a utility-first CSS framework
 
-# npm
-npm install
-
-# pnpm
-pnpm install
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Contributing
+If you'd like to contribute to this project, please fork the repository and submit a pull request. All contributions are welcome!
