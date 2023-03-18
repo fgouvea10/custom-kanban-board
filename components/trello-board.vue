@@ -37,7 +37,7 @@ const alt = useKeyModifier("Alt")
           <draggable v-model="column.tasks" :group="{ name: 'tasks', pull: alt ? 'clone' : true }" item-key="id" :animation="150" handle=".drag-handle">
             <template #item="{ element: task } : { element: Task }">
               <div>
-                <TrelloBoardTask :task="task" />
+                <TrelloBoardTask :task="task" @delete="column.tasks = column.tasks.filter(item => item.id !== $event)" />
               </div>
             </template>
           </draggable>
