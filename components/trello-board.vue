@@ -45,9 +45,13 @@ function createColumn() {
         <div class="bg-gray-200 column p-5 rounded min-w-[250px]">
           <header class="font-bold mb-4">
             <drag-handle />
-            <input class="title-input bg-transparent focus:bg-white rounded px-1 w-4/5" @keyup.enter="($event.target as HTMLInputElement).blur()" type="text" v-model="column.title" />
+            <input class="title-input bg-transparent focus:bg-white rounded px-1 w-4/5"
+              @keyup.enter="($event.target as HTMLInputElement).blur()"
+              @keydown.backspace="column.title === '' ? columns = columns.filter(col => col.id !== column.id) : null"
+              type="text" v-model="column.title" />
           </header>
-          <draggable v-model="column.tasks" :group="{ name: 'tasks', pull: alt ? 'clone' : true }" item-key="id" :animation="150" handle=".drag-handle">
+          <draggable v-model="column.tasks" :group="{ name: 'tasks', pull: alt ? 'clone' : true }" item-key="id"
+            :animation="150" handle=".drag-handle">
             <template #item="{ element: task } : { element: Task }">
               <div>
                 <TrelloBoardTask :task="task" @delete="column.tasks = column.tasks.filter(item => item.id !== $event)" />
@@ -63,6 +67,5 @@ function createColumn() {
 
     <button @click="createColumn" class="bg-gray-200 whitespace-nowrap p-2 rounded opacity-50">
       + Add another column
-    </button>
-  </div>
-</template>
+  </button>
+</div></template>
