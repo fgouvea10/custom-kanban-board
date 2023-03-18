@@ -42,9 +42,7 @@ const alt = useKeyModifier("Alt")
             </template>
           </draggable>
           <footer>
-            <button type="button" class="text-gray-500 mt-2 p-1 hover:bg-gray-300 rounded transition-colors">
-              + Add a card
-            </button>
+            <new-task @add="column.tasks.push($event)" />
           </footer>
         </div>
       </template>
