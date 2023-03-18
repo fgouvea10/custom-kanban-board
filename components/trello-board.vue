@@ -9,9 +9,9 @@ const columns = ref<Column[]>([
     id: nanoid(),
     title: 'To Do',
     tasks: [
-      { id: nanoid(), title: 'Create something', createdAt: new Date() },
-      { id: nanoid(), title: 'Create something', createdAt: new Date() },
-      { id: nanoid(), title: 'Create something', createdAt: new Date() }
+      { id: nanoid(), title: 'Fix error in production', createdAt: new Date() },
+      { id: nanoid(), title: 'Create something cool', createdAt: new Date() },
+      { id: nanoid(), title: 'Try another thing', createdAt: new Date() }
     ]
   },
   {
@@ -20,6 +20,8 @@ const columns = ref<Column[]>([
     tasks: []
   }
 ])
+
+const alt = useKeyModifier("Alt")
 </script>
 
 <template>
@@ -32,7 +34,7 @@ const columns = ref<Column[]>([
             <drag-handle />
             {{ column.title }}
           </header>
-          <draggable v-model="column.tasks" group="tasks" item-key="id" :animation="150" handle=".drag-handle">
+          <draggable v-model="column.tasks" :group="{ name: 'tasks', pull: alt ? 'clone' : true }" item-key="id" :animation="150" handle=".drag-handle">
             <template #item="{ element: task } : { element: Task }">
               <TrelloBoardTask :task="task" />
             </template>
