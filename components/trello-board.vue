@@ -4,19 +4,20 @@ import draggable from 'vuedraggable'
 
 import type { Column, Task } from '~~/types';
 
-const columns = ref<Column[]>([
+const columns = useLocalStorage<Column[]>('@trello-board', [
   {
     id: nanoid(),
     title: 'To Do',
-    tasks: [
-      { id: nanoid(), title: 'Fix error in production', createdAt: new Date() },
-      { id: nanoid(), title: 'Create something cool', createdAt: new Date() },
-      { id: nanoid(), title: 'Try another thing', createdAt: new Date() }
-    ]
+    tasks: []
   },
   {
     id: nanoid(),
     title: 'In Progress',
+    tasks: []
+  },
+  {
+    id: nanoid(),
+    title: 'Done ✅',
     tasks: []
   }
 ])
