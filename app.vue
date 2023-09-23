@@ -3,6 +3,6 @@
     <!-- <h1 class="text-4xl text-white flex items-center mb-10">
       <img src="
     </h1> -->
-    <trello />
-  </div
+    <TrelloBoard />
+  </div>
 </template>
